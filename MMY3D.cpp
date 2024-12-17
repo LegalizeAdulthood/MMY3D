@@ -2,6 +2,8 @@
 #include "AviFile.h"
 #include "MMY3D.h"
 
+#include <cmath>
+
 #define MAX_LOADSTRING 100
 
 HINSTANCE hInst;								// instance actuelle
@@ -2435,7 +2437,7 @@ void ThColorbmpBits(void *arg)
 						{
 							double ad2 = 2 * ad - PI + lightPhongElev;
 							double ad2ps = ad2*PhongSize;
-							if(abs(ad2ps)<PIs2)
+							if(std::abs(ad2ps)<PIs2)
 							{
 								double dphi=abs(lightAngleRadians-phi);
 								if (dphi>PI)dphi -= 2 * PI;
