@@ -773,7 +773,7 @@ void DestroyFPoint(LISTFPOINTS *list)
 	list->NbPoints = 0;
 }
 
-void SaveFPoint(char *name, LISTFPOINTS *list)
+void SaveFPoint(const char *name, LISTFPOINTS *list)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -790,7 +790,7 @@ void SaveFPoint(char *name, LISTFPOINTS *list)
 	fclose(f);
 }
 
-void LoadFPoints(char *name, LISTFPOINTS *list)
+void LoadFPoints(const char *name, LISTFPOINTS *list)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -820,7 +820,7 @@ void SaveSubMin(char *name)
 	fclose(f);
 }
 
-void LoadSubMin(char *name)
+void LoadSubMin(const char *name)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -864,7 +864,7 @@ void SaveRelief(char *name)
 	fclose(f);
 }
 
-void LoadRelief(char *name)
+void LoadRelief(const char *name)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -925,7 +925,7 @@ void Save3D(char *name)
 	fclose(f);
 }
 
-void Load3D(char *name)
+void Load3D(const char *name)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -1069,7 +1069,7 @@ void DestroyRGBPOS(LRGBPOS *list)
 	list->NbPoints = 0;
 }
 
-void SaveRGBPos(char *name, LRGBPOS *list)
+void SaveRGBPos(const char *name, LRGBPOS *list)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -1085,7 +1085,7 @@ void SaveRGBPos(char *name, LRGBPOS *list)
 	fclose(f);
 }
 
-void LoadRGBPos(char *name, LRGBPOS *list)
+void LoadRGBPos(const char *name, LRGBPOS *list)
 {
 	char fname[MAX_PATH];
 	FILE *f;
@@ -3917,7 +3917,7 @@ INT_PTR CALLBACK SpeedSetup(HWND hDlg, UINT message, WPARAM wParam, LPARAM lPara
 	static HFONT hf1 = NULL;
 	static BOOL dragCP, VertZoom=TRUE;
 	static double EchBase = 40.0;
-	static char *nomkfs;
+	static const char *nomkfs;
 	HWND hwndImg1, hwndImg2, hwndGraph, hwndPosit;
 	PAINTSTRUCT ps;
 	HDC hdc;
