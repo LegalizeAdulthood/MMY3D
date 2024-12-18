@@ -4974,12 +4974,12 @@ void PaintZoomColor(HWND hDlg)
 INT_PTR CALLBACK ReliefProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	UNREFERENCED_PARAMETER(lParam);
+    TCHAR txt[50]{};
+    char ctxt[50]{};
+
 	switch (message)
 	{
 	case WM_INITDIALOG:
-		TCHAR txt[50];
-		char ctxt[50];
-
 		LoadRelief("Relief.kfs");
 		SendDlgItemMessage(hDlg, IDC_BPHONG, BM_SETCHECK, (bPhong) ? BST_CHECKED : BST_UNCHECKED, 0);
 		sprintf_s(ctxt, "%5.2lf", PhongSize);
@@ -5072,12 +5072,12 @@ INT_PTR CALLBACK ReliefProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lPara
 INT_PTR CALLBACK f3DProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	UNREFERENCED_PARAMETER(lParam);
+	TCHAR txt[50];
+	char ctxt[50];
+
 	switch (message)
 	{
 	case WM_INITDIALOG:
-		TCHAR txt[50];
-		char ctxt[50];
-
 		Load3D("3D.kfs");
 		SendDlgItemMessage(hDlg, IDC_3D, BM_SETCHECK, (b3D) ? BST_CHECKED : BST_UNCHECKED, 0);
 		SendDlgItemMessage(hDlg, IDC_SQRT3D, BM_SETCHECK, (bSqrt3D) ? BST_CHECKED : BST_UNCHECKED, 0);
@@ -5215,10 +5215,10 @@ INT_PTR CALLBACK VideoProc(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 {
 	static RECT rectGraph;
 	UNREFERENCED_PARAMETER(lParam);
+	TCHAR txt[MAX_PATH];
 	switch (message)
 	{
 	case WM_INITDIALOG:
-		TCHAR txt[MAX_PATH];
 		wsprintf(txt, L"%d", VideoFPS);
 		SetDlgItemText(hDlg, IDC_FPS , txt);
 		wsprintf(txt, L"%d", VideoFPM);
